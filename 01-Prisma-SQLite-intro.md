@@ -1,5 +1,8 @@
 # Introdução ao Prisma, SQLite
 ## O que é Prisma?
+
+https://www.prisma.io/
+
 Prisma é um ORM (Object-Relational Mapping) moderno para Node.js e TypeScript. Ele serve como uma camada de abstração entre seu código e o banco de dados, oferecendo:
 
 - **Type Safety**: Integração perfeita com TypeScript, fornecendo autocompletar e verificação de tipos
@@ -9,6 +12,9 @@ Prisma é um ORM (Object-Relational Mapping) moderno para Node.js e TypeScript. 
 - **Studio Visual**: Interface gráfica para visualizar e editar dados
 
 ## Por que SQLite?
+
+https://www.sqlite.org/
+
 SQLite é um banco de dados SQL leve, que:
 - Não requer servidor separado
 - Armazena dados em um único arquivo
@@ -24,7 +30,6 @@ npx create-next-app@latest meu-app-prisma
 ```
 Este comando cria um novo projeto Next.js com todas as configurações modernas necessárias. Selecionamos:
 - **TypeScript**: Para tipagem estática e melhor tooling
-- **ESLint**: Para manter código consistente e evitar erros
 - **Tailwind**: Framework CSS utility-first para estilização rápida
 - **App Router**: Nova arquitetura do Next.js com melhor performance
 

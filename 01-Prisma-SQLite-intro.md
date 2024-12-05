@@ -66,6 +66,12 @@ Cada linha tem um propósito:
 - `@default`: Define valores padrão
 - `@updatedAt`: Atualiza timestamp automaticamente
 
+- depois, vamos mandar o prisma criar a migração e aplicá-la no banco:
+
+```bash
+npx prisma migrate dev --name init
+```
+
 ### 5. Cliente Prisma
 
 ```lib/prisma.ts```
@@ -87,6 +93,9 @@ Este arquivo:
 ```app/api/todos/route.ts```
 
 ```typescript
+import { prisma } from '@/lib/prisma'
+import { NextResponse } from 'next/server'
+
 // GET: Busca todas as tarefas
 export async function GET() {
   const todos = await prisma.todo.findMany({

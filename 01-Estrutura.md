@@ -119,20 +119,8 @@ utils/
 ## 3. Configurações Iniciais
 
 ### 3.1 Configurar Prisma
-Crie o arquivo `prisma/schema.prisma`:
 
-```prisma
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "sqlite"
-  url      = env.DATABASE_URL
-}
-
-// Modelos serão adicionados posteriormente
-```
+Siga as instruções da documentação https://www.prisma.io/docs/getting-started/quickstart-sqlite (após a parte do Typescript, uma vez que ele já foi instalado na criação do projeto)
 
 ### 3.2 Configurar Variáveis de Ambiente
 Crie o arquivo `.env`:

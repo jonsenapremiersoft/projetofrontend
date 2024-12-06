@@ -59,8 +59,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 ### 3. Configuração da Autenticação
 
+Antes, exportar o Prisma para a aplicação
+
+```src/lib/prisma.ts```
+
 ```typescript
-// /src/auth.config.ts
+import { PrismaClient } from "@prisma/client"
+
+const globalForPrisma = global as unknown as {
+  prisma: PrismaClient | undefined
+}
+
+export const prisma = globalForPrisma.prisma ?? new PrismaClient()
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma
+```
+
+Depois, adicione o arquivo de configuração de Authentication do Next:
+
+```src/auth.config.ts```
+
+```typescript
 import type { AuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { prisma } from "@/lib/prisma"

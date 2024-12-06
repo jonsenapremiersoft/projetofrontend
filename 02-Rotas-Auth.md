@@ -40,8 +40,8 @@ app/
 ### 1. Instalação das Dependências
 
 ```bash
-npm install @auth/nextjs bcryptjs
-npm install @types/bcryptjs --save-dev
+npm install next-auth bcryptjs --legacy-peer-deps
+npm install next-transpile-modules --save-dev --legacy-peer-deps
 ```
 
 ### 2. Configuração do Provider
@@ -58,11 +58,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 ```
 
 ### 3. Configuração da Autenticação
-
-```bash
-npm install next-auth bcryptjs --legacy-peer-deps
-npm install next-transpile-modules --save-dev --legacy-peer-deps
-```
 
 ```typescript
 // /src/auth.config.ts

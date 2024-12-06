@@ -153,6 +153,14 @@ export const authConfig: AuthOptions = {
 }
 ```
 
+Depois, crie o ```auth.ts``` na raiz do projeto, que vai exportar os métodos de autenticação:
+```typescript
+import NextAuth from 'next-auth'
+import { authConfig } from './src/auth.config'
+
+export const { auth, signIn, signOut } = NextAuth(authConfig)
+```
+
 ### 4. Proteção de Rotas com Middleware
 
 ```typescript

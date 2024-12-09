@@ -89,12 +89,12 @@ export function CategoryForm({
 
     try {
       if (categoria) {
-        await fetch(`/api/categorias/${categoria.id}`, {
+        await fetch(`/api/admin/categorias/${categoria.id}`, {
           method: "PUT",
           body: JSON.stringify({ nome }),
         })
       } else {
-        await fetch("/api/categorias", {
+        await fetch("/api/admin/categorias", {
           method: "POST",
           body: JSON.stringify({ nome }),
         })
@@ -152,7 +152,7 @@ export function CategoryList({ categorias }: { categorias: Categoria[] }) {
     if (!confirm("Tem certeza que deseja excluir esta categoria?")) return
 
     try {
-      await fetch(`/api/categorias/${id}`, {
+      await fetch(`/api/admin/categorias/${id}`, {
         method: "DELETE",
       })
       router.refresh()
